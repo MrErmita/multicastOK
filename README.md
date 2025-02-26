@@ -1,51 +1,88 @@
-# Multicast Communication Project
-
+# 📡 Multicast Chat
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Last Commit](https://img.shields.io/github/last-commit/MrErmita/multicastOK?style=for-the-badge)
-![Issues](https://img.shields.io/github/issues/MrErmita/multicastOK?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/MrErmita/multicastOK?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/MrErmita/multicastOK?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/MrErmita/multicastOK?style=for-the-badge)
 
+Un semplice sistema di comunicazione basato su **Multicast UDP** in **Java**. Questo progetto permette di trasmettere messaggi a più client contemporaneamente utilizzando la tecnologia multicast. 🔥
 
-## Descrizione
-Questo progetto implementa una comunicazione multicast tra un **server** e **client multipli**, utilizzando i socket UDP in Java. Il server invia messaggi periodici a un gruppo multicast, e i client si uniscono a questo gruppo per ricevere i messaggi.
+---
 
-## Struttura del Progetto
-- **`ServerMulticast.java`**: Invia un messaggio ogni secondo ai client connessi.
-- **`MulticastClient.java`**: Riceve i messaggi dal gruppo multicast e li stampa in console.
+## ✨ Funzionalità
+✅ Trasmissione di messaggi in tempo reale tramite **Multicast UDP**
+✅ Supporto per più client connessi simultaneamente
+✅ Invio di messaggi automatico ogni secondo dal server
+✅ Ricezione dei messaggi da parte dei client in tempo reale
+✅ Implementazione semplice ed efficace con **Java Sockets**
 
-## Requisiti
-- Java 8+
-- Connessione di rete
+---
 
-## Come Eseguire il Progetto
+## ⚙️ Installazione e Utilizzo
 
-### 1. Compilare i file Java
-```sh
-javac -d out src/org/example/*.java
+### 📥 Clona il repository
+```bash
+git clone https://github.com/MrErmita/multicastOK.git
+cd multicastOK
 ```
 
-### 2. Avviare il Server Multicast
-```sh
-java -cp out org.example.ServerMulticast
+### 🚀 Avvio del Server
+```bash
+javac -d bin src/org/example/ServerMulticast.java
+java -cp bin org.example.ServerMulticast
 ```
 
-### 3. Avviare uno o più Client Multicast
-```sh
-java -cp out org.example.MulticastClient
+### 📡 Avvio del Client
+```bash
+javac -d bin src/org/example/MulticastClient.java
+java -cp bin org.example.MulticastClient
 ```
 
-## Funzionamento
-1. Il server invia messaggi contenenti data e ora a intervalli di **1 secondo**.
-2. I client si connettono al gruppo multicast e ricevono i messaggi in tempo reale.
-3. Dopo **20 secondi**, il server si chiude automaticamente.
+---
 
-## Possibili Miglioramenti
-- Gestione dinamica del numero di messaggi inviati.
-- Aggiunta di un'interfaccia grafica per la visualizzazione dei messaggi.
-- Implementazione di un meccanismo di riconnessione per i client disconnessi.
+## 🛠️ Tecnologie Utilizzate
+- **Java** ☕
+- **Multicast UDP** 📡
+- **Socket Networking** 🌐
+- **Multi-threading** 🧵
 
-## Contributi
-Sentiti libero di inviare **pull request** o segnalare **issue** se trovi problemi o vuoi migliorare il progetto!
+---
 
-## Licenza
-Questo progetto è distribuito sotto la licenza **MIT**. 📜
+## 📡 Come Funziona
+Il **ServerMulticast** invia automaticamente messaggi ogni secondo a tutti i client connessi al gruppo multicast specificato. I **client multicast** si uniscono al gruppo e ascoltano i messaggi trasmessi dal server.
+
+Esempio di codice per l'invio multicast:
+```java
+DatagramPacket packet = new DatagramPacket(bufferOUT, bufferOUT.length, group, porta);
+socket.send(packet);
+```
+
+Esempio di codice per la ricezione nei client:
+```java
+DatagramPacket packet = new DatagramPacket(bufferIN, bufferIN.length);
+socket.receive(packet);
+String received = new String(packet.getData(), 0, packet.getLength());
+```
+
+---
+
+## 🚀 Contribuire
+Se vuoi migliorare il progetto:
+1. Fai un **fork** del repo 🍴
+2. Crea un **branch** con la tua feature `git checkout -b nuova-feature`
+3. **Commit** le modifiche `git commit -m 'Aggiunta nuova feature'`
+4. Fai un **push** `git push origin nuova-feature`
+5. Apri una **Pull Request** 🚀
+
+---
+
+## 📜 Licenza
+Questo progetto è distribuito sotto licenza MIT. 📄
+
+---
+
+## 📬 Contatti
+📧 Email: [alessio.bragetti@gmail.com](mailto:alessio.bragetti@gmail.com)
+🐙 GitHub: [MrErmita](https://github.com/MrErmita)
+
+💡 **Lascia una ⭐ se ti è piaciuto il progetto!**
 
