@@ -1,8 +1,8 @@
 # Multicast Communication Project
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Last Commit](https://img.shields.io/github/last-commit/tuo-username/tuo-repo?style=for-the-badge)
-![Issues](https://img.shields.io/github/issues/tuo-username/tuo-repo?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/MrErmita/mulitcastOK?style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/MrErmita/mulitcastOK?style=for-the-badge)
 
 ## Descrizione
 Questo progetto implementa una comunicazione multicast tra un **server** e **client multipli**, utilizzando i socket UDP in Java. Il server invia messaggi periodici a un gruppo multicast, e i client si uniscono a questo gruppo per ricevere i messaggi.
