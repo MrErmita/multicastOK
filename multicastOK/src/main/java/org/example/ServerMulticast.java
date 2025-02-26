@@ -13,7 +13,7 @@ public class ServerMulticast {
         int porta = 6789; // Porta su cui il server invierà i pacchetti multicast
 
         // Indirizzo IP del gruppo multicast
-        InetAddress group = InetAddress.getByName("255.4.5.6");
+        InetAddress group = InetAddress.getByName("239.255.0.1");
 
         // Creazione della socket multicast sulla porta specificata
         MulticastSocket socket = new MulticastSocket(porta);
